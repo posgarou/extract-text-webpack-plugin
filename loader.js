@@ -97,6 +97,7 @@ module.exports.pitch = function(request) {
 					var text = this.exec(source, request);
 					if(typeof text === "string")
 						text = [[0, text]];
+					if (!text.forEach) text = [];
 					text.forEach(function(item) {
 						var id = item[0];
 						compilation.modules.forEach(function(module) {
